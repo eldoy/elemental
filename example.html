@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ElementalJS example</title>
+  <style>
+    body {
+      margin: 20px;
+      background-color: beige;
+    }
+  </style>
+</head>
+<body>
+  <script src="./elemental.js"></script>
+  <script>
+
+    var data = [
+      { name: 'Peter' },
+      { name: 'Vanessa' }
+    ]
+
+    function list () {
+      return data.map((x) => {
+        return h('li', '', {}, [
+          h('span', x.name, { style: 'font-size: 50px'})
+        ])
+      })
+    }
+
+    var imageUrl = 'https://images.pexels.com/photos/36753/flower-purple-lical-blosso.jpg?auto=compress&cs=tinysrgb&h=350'
+
+    document.body.appendChild(
+      h('section', '', {}, [
+        h('div', '', { class: 'myClass' , title: 'This is a div' }, [
+          h('h1', 'Is this cool?'),
+          h('h3', 'Cool!!'),
+          h('img', '', { src: imageUrl }),
+          h('p', 'Javascript is the best!', { style: 'color: red; font-size: 20px' }),
+          h('p', 'Hello', {}, [
+            h('a', ' Link', { href: 'https://github.com'})
+          ]),
+          h('button', 'Click me', { onclick: 'clickMe()' })
+        ]),
+
+        h('ul', '', {}, list())
+      ])
+    )
+
+    function clickMe() {
+      alert('Hello world')
+    }
+
+  </script>
+</body>
+</html>
