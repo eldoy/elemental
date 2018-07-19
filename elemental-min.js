@@ -1,0 +1,1 @@
+(function(){'use strict';window.h=function(b,c,d,e){var f=document.createElement(b);for(var g in c&&(f.textContent=c),d){var i=d[g];i&&f.setAttribute(g,i)}if(e)for(var j of e)f.appendChild(j);return f}})();
